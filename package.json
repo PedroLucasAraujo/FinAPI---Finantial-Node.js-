@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-fundamentals",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:PedroLucasAraujo/nodejs-fundamentals.git",
+  "author": "Pedro Lucas Pinheiro Araujo <pedrolucas.araujo@agenciam3.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
