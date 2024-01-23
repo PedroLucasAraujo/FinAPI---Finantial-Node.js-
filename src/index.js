@@ -2,6 +2,8 @@ const express = require("express");
 
 const app = express();
 
+app.use(express.json());
+
 /**
  *  GET - Buscar uma informação dentro do servidor
  *  POST - Inserir uma Informação no servidor
@@ -10,15 +12,26 @@ const app = express();
  *  DELETE - Deletar uma informação no servidor
  */
 
+/**
+ * Tipos de Parâmetros
+ *
+ * Route Params => Identificar um recurso editar/deletar/buscar
+ * Query Params => Paginação / Filtro (url/courses?page=1&order=asc)
+ * Body Params => Os objetos para Inserção/alteração (JSON)
+ */
+
 app.get("/courses", (request, response) => {
+  const query = request.query;
   return response.json(["Curso 1", "Curso 2", "Curso 3"]);
 });
 
 app.post("/courses", (request, response) => {
+  const body = request.body;
   return response.json(["Curso 1", "Curso 2", "Curso 3", "Curso 4"]);
 });
 
 app.put("/courses/:id", (request, response) => {
+  const params = request.params;
   return response.json(["Curso 6", "Curso 2", "Curso 3", "Curso 4"]);
 });
 
