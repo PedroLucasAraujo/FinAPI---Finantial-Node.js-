@@ -12,6 +12,7 @@ const customers = [];
  * id - uuid
  * statement []
  */
+
 app.post("/account", (request, response) => {
   const { cpf, name } = request.body;
   const id = uuidv4();
